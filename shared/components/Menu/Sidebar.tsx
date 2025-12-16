@@ -1,6 +1,7 @@
 'use client';
 import { Link, useRouter, usePathname } from '@/core/i18n/routing';
 import {
+  BookOpen,
   House,
   Languages,
   Leaf,
@@ -174,6 +175,23 @@ const Sidebar = () => {
           )}
         />
         <span className='max-lg:hidden'>Preferences</span>
+      </Link>
+
+      <div className='max-lg:hidden w-full mt-3 px-4 text-xs uppercase  text-[var(--main-color)] opacity-70'>
+        Academy
+      </div>
+      <Link
+        href='/academy'
+        className={clsx(
+          'max-lg:hidden text-xl duration-250 transition-all py-2 px-4 rounded-xl w-full flex items-center gap-2',
+          pathWithoutLocale === '/academy'
+            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
+            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+        )}
+        onClick={playClick}
+      >
+        <BookOpen className='shrink-0' />
+        <span>Guides</span>
       </Link>
 
       <div className='max-lg:hidden w-full mt-3 px-4 text-xs uppercase  text-[var(--main-color)] opacity-70'>
