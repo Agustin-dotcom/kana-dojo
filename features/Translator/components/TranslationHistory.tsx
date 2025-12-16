@@ -117,7 +117,7 @@ export default function TranslationHistory({
             <ActionButton
               colorScheme='secondary'
               borderColorScheme='secondary'
-              borderRadius='lg'
+              borderRadius='2xl'
               borderBottomThickness={6}
               className='!w-auto px-4'
             >
@@ -144,7 +144,7 @@ export default function TranslationHistory({
               <ActionButton
                 colorScheme='main'
                 borderColorScheme='main'
-                borderRadius='lg'
+                borderRadius='2xl'
                 borderBottomThickness={6}
                 className='!w-auto px-6'
                 onClick={() => setClearDialogOpen(false)}
@@ -154,7 +154,7 @@ export default function TranslationHistory({
               <ActionButton
                 colorScheme='secondary'
                 borderColorScheme='secondary'
-                borderRadius='lg'
+                borderRadius='2xl'
                 borderBottomThickness={6}
                 className='!w-auto px-6'
                 onClick={() => {
@@ -222,7 +222,7 @@ export default function TranslationHistory({
             <ActionButton
               colorScheme='secondary'
               borderColorScheme='secondary'
-              borderRadius='lg'
+              borderRadius='2xl'
               borderBottomThickness={6}
               className={cn(
                 '!w-9 !min-w-9 h-9 !p-0 flex-shrink-0',

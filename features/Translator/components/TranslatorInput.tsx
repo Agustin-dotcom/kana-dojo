@@ -131,7 +131,7 @@ export default function TranslatorInput({
             disabled={isDisabled}
             colorScheme='secondary'
             borderColorScheme='secondary'
-            borderRadius='lg'
+            borderRadius='xl'
             borderBottomThickness={6}
             className={cn(
               '!w-9 !min-w-9 h-9 !p-0',
