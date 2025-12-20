@@ -5,24 +5,8 @@ import { routing } from './core/i18n/routing';
 const intlMiddleware = createMiddleware(routing);
 
 export default function middleware(request: NextRequest) {
-  // TEMP: Skip i18n middleware when only one locale is active (dev AND production)
-  // No need for locale routing/detection when we only support English
-  if (routing.locales.length === 1) {
-    return NextResponse.next();
-  }
-
-  // Skip for common crawlers/bots that don't need locale handling
-  const userAgent = request.headers.get('user-agent') || '';
-  const isBot =
-    /bot|crawler|spider|crawling|facebookexternalhit|Twitterbot|LinkedInBot/i.test(
-      userAgent
-    );
-
-  // For bots, skip locale redirect logic - serve default locale
-  if (isBot) {
-    return NextResponse.next();
-  }
-
+  // Always run i18n middleware - even with one locale, it's needed for routing
+  // With localePrefix: 'never', the middleware handles internal rewriting
   return intlMiddleware(request);
 }
 
