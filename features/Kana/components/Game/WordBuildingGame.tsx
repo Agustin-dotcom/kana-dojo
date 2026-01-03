@@ -444,52 +444,50 @@ const WordBuildingGame = ({
         className={clsx(
           'w-[100vw]',
           'border-t-2 border-[var(--border-color)] bg-[var(--card-color)]',
-          'absolute bottom-0 z-10 px-6 py-6 md:bottom-6 md:px-12',
-          'flex flex-col items-center gap-6 md:flex-row md:items-center md:justify-center md:gap-0'
+          'absolute bottom-0 z-10 px-2 py-4 md:bottom-6 md:px-12 md:py-10',
+          'flex flex-row items-center justify-center'
         )}
       >
-        {/* Left Container: 50% width on desktop, aligned right */}
-        <div className='flex w-full items-center justify-center md:w-1/2 md:justify-end md:pr-6'>
+        {/* Left Container: 50% width, aligned right */}
+        <div className='flex w-1/2 items-center justify-end pr-3 md:pr-6'>
           <div
             className={clsx(
-              'flex items-center gap-3 transition-all duration-500 md:gap-4',
+              'flex items-center gap-2 transition-all duration-500 sm:gap-3 md:gap-4',
               showContinue
                 ? 'translate-x-0 opacity-100'
-                : 'pointer-events-none -translate-x-8 opacity-0'
+                : 'pointer-events-none -translate-x-4 opacity-0 sm:-translate-x-8'
             )}
           >
             {bottomBarState === 'correct' ? (
-              <CircleCheck className='h-10 w-10 text-[var(--main-color)] sm:h-12 sm:w-12' />
+              <CircleCheck className='h-8 w-8 text-[var(--main-color)] sm:h-12 sm:w-12' />
             ) : (
-              <CircleX className='h-10 w-10 text-[var(--secondary-color)] sm:h-12 sm:w-12' />
+              <CircleX className='h-8 w-8 text-[var(--secondary-color)] sm:h-12 sm:w-12' />
             )}
             <div className='flex flex-col'>
               <span
                 className={clsx(
-                  'text-lg font-bold sm:text-2xl',
+                  'text-sm font-bold sm:text-2xl',
                   bottomBarState === 'correct'
                     ? 'text-[var(--main-color)]'
                     : 'text-[var(--secondary-color)]'
                 )}
               >
-                {bottomBarState === 'correct'
-                  ? 'Nicely done!'
-                  : 'Correct solution:'}
+                {bottomBarState === 'correct' ? 'Correct!' : 'Solution:'}
               </span>
-              <span className='text-sm font-medium text-[var(--secondary-color)]/60 sm:text-lg'>
+              <span className='text-xs font-medium text-[var(--secondary-color)]/60 sm:text-lg'>
                 {wordData.answerChars.join('')}
               </span>
             </div>
           </div>
         </div>
 
-        {/* Right Container: 50% width on desktop, aligned left */}
-        <div className='flex w-full items-center justify-center md:w-1/2 md:justify-start md:pl-6'>
+        {/* Right Container: 50% width, aligned left */}
+        <div className='flex w-1/2 items-center justify-start pl-3 md:pl-6'>
           <ActionButton
             ref={buttonRef}
             borderBottomThickness={12}
             borderRadius='3xl'
-            className='w-full max-w-[18rem] py-3 text-xl font-medium sm:py-4 sm:text-2xl md:w-auto md:min-w-[14rem] md:px-16'
+            className='w-auto min-w-[7rem] px-6 py-2.5 text-lg font-medium sm:min-w-[14rem] sm:px-16 sm:py-4 sm:text-2xl'
             onClick={showContinue ? handleContinue : handleCheck}
             disabled={!canCheck && !showContinue}
           >
