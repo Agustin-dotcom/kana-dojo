@@ -285,6 +285,10 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(65.0% 0.175 215.0 / 1)',
       },
       {
+        id: 'autumn-temple',
+        backgroundColor: 'oklch(20.0% 0.048 35.0 / 1)',
+        mainColor: 'oklch(68.0% 0.185 40.0 / 1)',
+        secondaryColor: 'oklch(78.0% 0.135 55.0 / 1)'},{
         id: 'cherry-cola',
         backgroundColor: 'oklch(18.0% 0.055 20.0 / 1)',
         mainColor: 'oklch(58.0% 0.195 25.0 / 1)',
