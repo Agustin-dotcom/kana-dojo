@@ -382,7 +382,9 @@ const WelcomeModal = () => {
               {themeSets
                 .filter(
                   themeSet =>
-                    themeSet.name === 'Base' || themeSet.name === 'Dark',
+                    themeSet.name === 'Base' ||
+                    themeSet.name === 'Dark' ||
+                    themeSet.name.startsWith('Premium'),
                 )
                 .map(themeSet => {
                   let filteredThemes = themeSet.themes;
