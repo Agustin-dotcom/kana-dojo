@@ -43,6 +43,7 @@ This file provides comprehensive guidance for AI coding assistants (GitHub Copil
 ---
 
 ## Verification (compact)
+
 - Recommended: keep types and linting green locally before major PRs.
 
 <!--
@@ -57,6 +58,7 @@ Use specific test commands when needed (examples are in repo docs).
 ---
 
 ## Architecture — feature-based (short)
+
 KanaDojo is organized by feature: app/, features/, shared/, core/. Keep business logic inside features and avoid cross-feature internal imports.
 
 ---
@@ -64,6 +66,7 @@ KanaDojo is organized by feature: app/, features/, shared/, core/. Keep business
 ---
 
 ## Code style & state — quick rules
+
 - Imports: use path aliases (`@/...`), avoid cross-feature relative imports.
 - TypeScript: strict mode; fix errors; prefer `interface` for public APIs.
 - Components: functional + explicit props; hooks/stores start with `use`.
@@ -72,24 +75,26 @@ KanaDojo is organized by feature: app/, features/, shared/, core/. Keep business
 
 ---
 
-
 ## i18n, commits & rules (compact)
+
 - i18n: `next-intl` (namespace-based). <!-- `npm run i18n:check` instructions omitted here -->
 - Git: use conventional commits `type(scope): desc` (example in repo).
 
 ### Rules summary
+
 - Keep logic in `features/`. No cross-feature internals.
 - Avoid circular deps. Use path aliases.
 
 ### Do's / Don'ts (short)
+
 - ✅ Use TypeScript types, path aliases, and translations.
 - ❌ Don’t add business logic to `app/` or create circular deps.
 
 ### Common tasks
+
 - New feature: create `features/NewFeature/` + `components/`, `store/`, `data/`, `lib/` and route.
 - Add translations: update `core/i18n/locales/*` and validate via repo scripts when needed.
 
 ---
 
 **Last Updated**: 2026-02-15
-
